@@ -5,9 +5,6 @@ export class HungryBear {
         this.foodLevel = 10;
     }
 
-
-
-
     setHunger() {
         setInterval(() => {
             this.foodLevel--;

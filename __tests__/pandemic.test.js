@@ -1,4 +1,4 @@
-import { HungryBear } from './../src/hungrybear.js';
+import { HungryBear } from './../src/pandemic.js';
 
 describe('Fuzzy', () => {
     jest.useFakeTimers();
