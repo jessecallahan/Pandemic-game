@@ -1,42 +1,51 @@
-import { HungryBear } from './../src/pandemic.js';
+import { Player } from './../src/pandemic.js';
 
-describe('Fuzzy', () => {
+describe('Jesse', () => {
     jest.useFakeTimers();
-    let fuzzy;
+    let player1;
 
 
     beforeEach(function () {
-        fuzzy = new HungryBear("Fuzzy");
-        fuzzy.setHunger();
+        player1 = new Player("Jesse");
+        player1.infectionRate();
+        player1.pandemicDeath1();
     });
 
     afterEach(function () {
         jest.clearAllTimers();
     });
 
-    test('should have a name and a food level of 10 when it is created', () => {
-        expect(fuzzy.name).toEqual("Fuzzy");
-        expect(fuzzy.foodLevel).toEqual(10);
+    test('should have a name and a life force of 10 when it is created', () => {
+        expect(player1.name).toEqual("Jesse");
+        expect(player1.infectionLevel).toEqual(0);
     });
 
-    test('should have a food level of 7 after 3001 milliseconds', () => {
-        jest.advanceTimersByTime(3001);
-        expect(fuzzy.foodLevel).toEqual(7);
+    test('should change infection level to randomn whole number between 1-6', () => {
+        jest.advanceTimersByTime(1001);
+        expect(player1.infectionLevel).toEqual(3);
     });
 
-    test('should get very hungry if the food level drops below zero', function () {
-        fuzzy.foodLevel = 0;
-        expect(fuzzy.didYouGetEaten()).toEqual(true);
-    });
-
-    test('should get very hungry if 10 seconds pass without feeding', function () {
+    test('should change infection level to randomn whole number after 10 secs', () => {
         jest.advanceTimersByTime(10001);
-        expect(fuzzy.didYouGetEaten()).toEqual(true);
+        expect(player1.infectionLevel).toEqual(3);
     });
 
-    test('should have a food level of ten if it is fed', function () {
-        jest.advanceTimersByTime(9001);
-        fuzzy.feed();
-        expect(fuzzy.foodLevel).toEqual(10);
+    test('should change infection level to randomn whole number after 20 secs', () => {
+        jest.advanceTimersByTime(20001);
+        expect(player1.infectionLevel).toEqual(3);
     });
+
+    test('should change infection level to 100 after 60 secs ending the game', function () {
+        jest.advanceTimersByTime(60001);
+        console.log(player1.infectionLevel)
+        expect(player1.infectionLevel).toEqual(100);
+    });
+
+    test('should change infection level to 100 ending the game', function () {
+        player1.infectionLevel = 100;
+        expect(player1.pandemicDeath()).toEqual(true);
+    });
+
+
+
 });

@@ -1,25 +1,54 @@
-export class HungryBear {
+export class Player {
 
     constructor(name) {
         this.name = name;
-        this.foodLevel = 10;
-    }
 
-    setHunger() {
+        this.infectionLevel = 0;
+
+    }
+    //;
+    // infectionRate() {
+    //     return Math.floor(Math.random() * (7 - 1) + 1)
+    // }
+
+    // setTimeout(infectionRate() {
+    //     alert()
+    // }, 0);
+
+    // setTimeout(function() {
+    //     alert("Hello friend! Maybe you should sign up for our newsletter!");
+    // }, 20000);
+
+    // setTimeout() {
+    //     infectionRate(()
+    // } 0);
+
+    // gameEnds() {
+    //     setTimeout(() => {
+    //         ;
+    //     }, 60000);
+    // }
+    infectionRate() {
         setInterval(() => {
-            this.foodLevel--;
-        }, 1000);
+            this.infectionLevel += Math.floor(Math.random() * (7 - 1) + 1);
+        }, 1000)
     }
 
-    didYouGetEaten() {
-        if (this.foodLevel > 0) {
-            return false;
-        } else {
+    pandemicDeath1() {
+        setTimeout(() => {
+            this.infectionLevel = 100;
+        }, 60000);
+    }
+
+    pandemicDeath() {
+        if (this.infectionLevel >= 100) {
             return true;
+        } else {
+            return false;
         }
     }
 
-    feed() {
-        this.foodLevel = 10;
-    }
+    //     nurse() {
+    //         this.lifeForce = 10;
+    //     }
 }
