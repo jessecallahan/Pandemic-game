@@ -2,15 +2,13 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css'
-import { solar } from './solar.js';
+import { Player } from './pandemic.js';
 
 $(document).ready(function () {
-  $('#solar-form').submit(function (event) {
+  $('#pandemic-form').submit(function (event) {
     event.preventDefault();
-    var goal = $('#age').val();
-    var output = solar(age);
-    output.forEach(function (element) {
-      $('#solution').append("<li>" + element + "</li>");
-    });
+    let player1 = new Player()
+    console.log(player1.infectionLevel)
+    $('#solution').text(player1.infectionLevel);
   });
 });
