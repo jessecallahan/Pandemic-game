@@ -4,14 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css'
 import { Player } from './pandemic.js';
 
-
-player1 = {
-  roll: 0,
-  grandTotal: 0
-};
-
 $(document).ready(function () {
 
+  //clock part
   var sec = 0;
   function pad(val) { return val > 9 ? val : "0" + val; }
   setInterval(function () {
@@ -19,6 +14,7 @@ $(document).ready(function () {
     $("#minutes").html(pad(parseInt(sec / 365, 10)));
   }, 1000);
 
+  //part that doesnt work
   $('#pandemic-form').submit(function (event) {
     event.preventDefault();
     newPlayer = new Player();
@@ -27,4 +23,4 @@ $(document).ready(function () {
     console.log(newPlayer.infectionLevel)
     $('#solution').text("test");
   });
-
+});
