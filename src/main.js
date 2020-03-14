@@ -13,8 +13,8 @@ $(document).ready(function () {
   var sec = 0;
   function pad(val) { return val > 9 ? val : "0" + val; }
   setInterval(function () {
-    $("#seconds").html(pad(++sec % 365) + "days");
-    $("#minutes").html(pad(parseInt(sec / 365, 10)));
+    $("#seconds").html(pad(++sec % 365) + " days");
+    $("#minutes").html(pad(parseInt(sec / 365, 10)) + " years ");
   }, 1000);
 
   //part that doesnt work
@@ -32,10 +32,4 @@ $(document).ready(function () {
       return alert('Game Over') ? "" : location.reload();
     }
   }, 1000);
-
-  //
-
-
-
-
 });
