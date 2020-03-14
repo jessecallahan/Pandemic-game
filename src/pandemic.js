@@ -7,22 +7,25 @@ export class Player {
         setInterval(() => {
             this.infectionLevel += Math.floor(Math.random() * (4 - 1) + 1);
         }, 3000);
+
     }
 
-    gameOver() {
-        if (this.infectionLevel >= 10) {
-            alert("you have lost");
-        } else { return false; }
-    }
-
-    // firstHelpPack() {
-    //     setTimeout(() => {
-    //         $("#firstbutton").html("<button onclick='minus()'>Work on Cure</button>")
+    // quickCure() {
+    //     setInterval(() => {
+    //         this.infectionLevel += Math.floor(Math.random() * (4 - 1) + 1);
     //     }, 3000);
+
     // }
-    // minus() {
-    //     this.infectionLevel -= 1;
+
+    // firstHelpPackShow() {
+    //     setTimeout(() => {
+    //         $("#firstbutton").text("first button goes here")
+
+    //     }, 5000);
+
     // }
+
+
 
     // move() {
     //     var elem = document.getElementById("myBar");

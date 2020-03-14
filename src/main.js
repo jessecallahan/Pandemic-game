@@ -21,16 +21,21 @@ $(document).ready(function () {
   let infectionLevel = 0
   let newPlayer = new Player(infectionLevel)
   newPlayer.startInfection();
-  newPlayer.gameOver();
+  // newPlayer.firstHelpPack();
 
 
-  //show infection level every three seconds
+
+  //show infection level every three seconds, end game if infection goes to 100 or more, reset html
   setInterval(function () {
-    $("#solution").html(newPlayer.infectionLevel + "% of Earth infected")
-  }, 3000);
-  console.log(newPlayer)
+    $("#infectionlevel").html(newPlayer.infectionLevel + "% of Earth infected")
+    if (newPlayer.infectionLevel >= 100) {
+      return alert('Game Over') ? "" : location.reload();
+    }
+  }, 1000);
+
+  //
+
+
+
 
 });
-
-
-
