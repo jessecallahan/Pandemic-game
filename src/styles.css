@@ -2,5 +2,9 @@ body {
     background-color: lightgreen;
   }
 
+  #heal1, #heal2, #heal3 {
+    display: none;
+  }
+
   
   

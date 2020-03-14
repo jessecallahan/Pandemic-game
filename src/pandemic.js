@@ -1,4 +1,4 @@
-export class Player {
+export class Game {
     constructor(infectionLevel) {
         this.infectionLevel = infectionLevel;
     }
@@ -9,6 +9,11 @@ export class Player {
         }, 3000);
 
     }
+
+    // minusFunction() {
+    //     let a = this.infectionLevel -= 1;
+    //     return a
+    // }
 
     // quickCure() {
     //     setInterval(() => {
