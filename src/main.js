@@ -4,6 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css'
 import { Player } from './pandemic.js';
 
+
+
+
 $(document).ready(function () {
 
   //clock part
@@ -15,12 +18,19 @@ $(document).ready(function () {
   }, 1000);
 
   //part that doesnt work
-  $('#pandemic-form').submit(function (event) {
-    event.preventDefault();
-    newPlayer = new Player();
-    newPlayer.startInfection();
-    console.log(this.name)
-    console.log(newPlayer.infectionLevel)
-    $('#solution').text("test");
-  });
+  let infectionLevel = 0
+  let newPlayer = new Player(infectionLevel)
+  newPlayer.startInfection();
+  newPlayer.gameOver();
+
+
+  //show infection level every three seconds
+  setInterval(function () {
+    $("#solution").html(newPlayer.infectionLevel + "% of Earth infected")
+  }, 3000);
+  console.log(newPlayer)
+
 });
+
+
+

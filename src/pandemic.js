@@ -1,25 +1,42 @@
 export class Player {
-    constructor(name) {
-        this.name = name;
-        this.infectionLevel = 0;
-        this.startInfection();
+    constructor(infectionLevel) {
+        this.infectionLevel = infectionLevel;
     }
 
     startInfection() {
         setInterval(() => {
-            this.infectionLevel += Math.floor(Math.random() * (7 - 1) + 1);
-        }, 1000);
+            this.infectionLevel += Math.floor(Math.random() * (4 - 1) + 1);
+        }, 3000);
     }
 
-    isDead() {
-        if (this.infectionLevel >= 100) {
-            return true;
-        } else {
-            return false;
-        }
+    gameOver() {
+        if (this.infectionLevel >= 10) {
+            alert("you have lost");
+        } else { return false; }
     }
 
+    // firstHelpPack() {
+    //     setTimeout(() => {
+    //         $("#firstbutton").html("<button onclick='minus()'>Work on Cure</button>")
+    //     }, 3000);
+    // }
+    // minus() {
+    //     this.infectionLevel -= 1;
+    // }
 
+    // move() {
+    //     var elem = document.getElementById("myBar");
+    //     var width = 0;
+    //     var id = setInterval(frame, 1000);
+    //     function frame() {
+    //         if (width == 100) {
+    //             clearInterval(id);
+    //         } else {
+    //             width++;
+    //             elem.style.width = width + '%';
+    //         }
+    //     }
+    // }
     // Stage1() {
     //     setTimeout(() => {
     //         setInterval(() => {
