@@ -9,22 +9,41 @@
 </head>
 
 <body>
-  <h1>A Pandemic has started!</h1>
-  <span id="minutes"></span><span id="seconds"></span>
-
-
-  <div id="infectionlevel"></div>
-
-  <div id="heal1">
-
-    here is our first line of defense
-
-    <div>
-      <button id="clickMe" type="button" value="clickme" onclick="doFunction();">Send Doctors</button>
+  <div class="container">
+    <h1>A Pandemic has started!</h1>
+    <div class="row">
+      <div class="col-sm">
+        <span id="minutes"></span><span id="seconds"></span>
+        <div id="infectionlevel"></div>
+      </div>
+      <div class="col-sm">
+        <div id="tenday"> Here is the ten day report:</div>
+        <div id="tendayinfectionlevel"></div>
+      </div>
     </div>
 
+    <br>
+    <div id="heal1">
 
+      Here is our first line of defense
+      <div id="cure1">
+        <button id="heal2Button">Start Cure (-1%/-5% every 10 days)</button>
+        <div>Cure 1 Response:</div>
+        <div id="tendayinfectionlevel3"></div>
+      </div>
+
+      <div id="doctor1">
+        <button id="heal1Button">Send Doctors (Goes Away after 5 clicks)</button>
+        <div>Doctors Response:</div>
+        <div id="tendayinfectionlevel2"></div>
+      </div>
+
+
+    </div>
   </div>
+  </div>
+
+
 
 </body>
 

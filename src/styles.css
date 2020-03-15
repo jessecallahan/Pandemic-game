@@ -1,8 +1,8 @@
 body {
-    background-color: lightgreen;
+    background-color: yellow;
   }
 
-  #heal1, #heal2, #heal3 {
+  #heal1, #heal2, #heal3, #tenday{
     display: none;
   }
 

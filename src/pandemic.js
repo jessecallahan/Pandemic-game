@@ -10,6 +10,35 @@ export class Game {
 
     }
 
+
+    doctor1() {
+        this.infectionLevel -= 1;
+    }
+
+    cure() {
+        setInterval(() => {
+            this.infectionLevel -= Math.floor(Math.random() * (6 - 1) + 1);
+        }, 10000);
+    }
+
+
+
+    // cure() {
+    //     setTimeout(() => {
+    //         this.
+    //         // console.log(`Math.floor(${Math.random()} * (7 - 1) + 1) => ${Math.floor(Math.random() * (7 - 1) + 1)}`);
+    //         // this.infectionLevel -= Math.floor(Math.random() * (7 - 1) + 1);
+    //         // this.infectionLevel = Math.max(0, this.infectionLevel)
+    //     }, 10000);
+    // }
+
+    cure2() {
+        setTimeout(() => {
+            this.infectionLevel -= Math.random() * (8 - 4) + 4; // to get random number between 8 and 4
+            this.infectionLevel = Math.max(0, this.infectionLevel) // for avoiding -ve integer
+        }, 1001);
+    }
+
     // minusFunction() {
     //     let a = this.infectionLevel -= 1;
     //     return a

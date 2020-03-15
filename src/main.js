@@ -22,31 +22,53 @@ $(document).ready(function () {
   let newGame = new Game(infectionLevel)
   newGame.startInfection();
 
+  //first line of defense: cure
+  $("#heal2Button").click(function () {
+    event.preventDefault();
+    newGame.cure();
+    $("#tendayinfectionlevel3").append(" " + (newGame.infectionLevel) + "%")
+    setInterval(function () {
+      $("#tendayinfectionlevel3").append(" " + (newGame.infectionLevel) + "%")
+    }, 10000);
+    $('#heal2Button').hide();
+
+  });
+
+  //first line of defense: doctors
+  var counter = 0;
+  $("#heal1Button").click(function () {
+    event.preventDefault();
+    newGame.doctor1();
+    $("#tendayinfectionlevel2").append((newGame.infectionLevel) + "%")
+    counter += 1;
+    if (counter > 4) {
+      $('#heal1Button').hide();
+    }
+  });
+
+
 
   // $('#heal1').show();
   // $('#hea2').hide();
 
-
-  //show infection level every three seconds, end game if infection goes to 100 or more, reset html
+  console.log(newGame.infectionLevel)
+  //show infection level every one second, end game if infection goes to 100 or more, reset html
   setInterval(function () {
-    document.getElementById("clickMe").onclick = function () { newGame.infectionLevel - 1 };
-    $("#infectionlevel").html(newGame.infectionLevel + "% of Earth infected")
+    $("#infectionlevel").html(" " + newGame.infectionLevel + "% of Earth infected")
     if (newGame.infectionLevel >= 100) {
       return alert('Game Over') ? "" : location.reload();
     }
   }, 1000);
 
+  //shows first line of defense
   setTimeout(function () {
     $('#heal1').show();
+    $('#tenday').show();
   }, 10000);
 
-
-  // setInterval(function () {
-  //   $().submit(function (event) {
-  //     event.preventDefault();
-  //     $("#infectionlevel").html((newGame.infectionLevel - 1) + "% of Earth infected")
-  //   }, 1000);
-  // }
-
+  //ten day counter
+  setInterval(function () {
+    $("#tendayinfectionlevel").append(" " + newGame.infectionLevel + "%")
+  }, 10000);
 
 });
