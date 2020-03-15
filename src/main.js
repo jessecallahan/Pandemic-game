@@ -26,12 +26,7 @@ $(document).ready(function () {
   $("#heal2Button").click(function () {
     event.preventDefault();
     newGame.cure();
-    $("#tendayinfectionlevel3").append(" " + (newGame.infectionLevel) + "%")
-    setInterval(function () {
-      $("#tendayinfectionlevel3").append(" " + (newGame.infectionLevel) + "%")
-    }, 10000);
     $('#heal2Button').hide();
-
   });
 
   //first line of defense: doctors
@@ -47,11 +42,6 @@ $(document).ready(function () {
   });
 
 
-
-  // $('#heal1').show();
-  // $('#hea2').hide();
-
-  console.log(newGame.infectionLevel)
   //show infection level every one second, end game if infection goes to 100 or more, reset html
   setInterval(function () {
     $("#infectionlevel").html(" " + newGame.infectionLevel + "% of Earth infected")

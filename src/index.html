@@ -11,6 +11,13 @@
 <body>
   <div class="container">
     <h1>A Pandemic has started!</h1>
+    <!-- notes for jesse (possibilites): 5 lines of defense
+    line 1 - 10 days
+    line 2 - 100 days
+    line 3 - 1 year
+    line 4 - 2 year
+    line 5 - 2 year and 50 days
+    Game ends at 3 years -->
     <div class="row">
       <div class="col-sm">
         <span id="minutes"></span><span id="seconds"></span>
@@ -18,7 +25,7 @@
       </div>
       <div class="col-sm">
         <div id="tenday"> Here is the ten day report:</div>
-        <div id="tendayinfectionlevel"></div>
+        <textarea class="form-control rounded-0" id="tendayinfectionlevel" rows="2"></textarea>
       </div>
     </div>
 
@@ -27,15 +34,16 @@
 
       Here is our first line of defense
       <div id="cure1">
-        <button id="heal2Button">Start Cure (-1%/-5% every 10 days)</button>
-        <div>Cure 1 Response:</div>
-        <div id="tendayinfectionlevel3"></div>
+        <button id="heal2Button">Start Cure (-1%/-2% every 5 days)</button>
+        <div>Cure 1 Response (-1%/-2% every 5 days):</div>
+        <textarea class="form-control rounded-0" id="tendayinfectionlevel3" rows="2"></textarea>
+
       </div>
 
       <div id="doctor1">
         <button id="heal1Button">Send Doctors (Goes Away after 5 clicks)</button>
-        <div>Doctors Response:</div>
-        <div id="tendayinfectionlevel2"></div>
+        <div>Doctors 1 Response (-1% (Max 5 clicks):</div>
+        <textarea class="form-control rounded-0" id="tendayinfectionlevel2" rows="2"></textarea>
       </div>
 
 

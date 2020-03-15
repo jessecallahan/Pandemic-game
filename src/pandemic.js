@@ -17,8 +17,10 @@ export class Game {
 
     cure() {
         setInterval(() => {
-            this.infectionLevel -= Math.floor(Math.random() * (6 - 1) + 1);
-        }, 10000);
+            let num = Math.floor(Math.random() * (3 - 1) + 1); - 0
+            $("#tendayinfectionlevel3").append("-" + num + "%")
+            return this.infectionLevel -= num
+        }, 5000);
     }
 
 
