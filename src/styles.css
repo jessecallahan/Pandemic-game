@@ -2,7 +2,7 @@ body {
     background-color: yellow;
   }
 
-  #heal1, #heal2, #heal3, #tenday{
+  #heal1, #heal2, #heal3, #tenday, #vaccineButton {
     display: none;
   }
 

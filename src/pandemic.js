@@ -12,91 +12,43 @@ export class Game {
 
 
     doctor1() {
-        this.infectionLevel -= 1;
+        this.infectionLevel--;
     }
 
     cure() {
         setInterval(() => {
             let num = Math.floor(Math.random() * (3 - 1) + 1); - 0
-            $("#tendayinfectionlevel3").append("-" + num + "%")
+            $("#cure1level").append("-" + num + "% ")
             return this.infectionLevel -= num
         }, 5000);
     }
 
-
-
-    // cure() {
-    //     setTimeout(() => {
-    //         this.
-    //         // console.log(`Math.floor(${Math.random()} * (7 - 1) + 1) => ${Math.floor(Math.random() * (7 - 1) + 1)}`);
-    //         // this.infectionLevel -= Math.floor(Math.random() * (7 - 1) + 1);
-    //         // this.infectionLevel = Math.max(0, this.infectionLevel)
-    //     }, 10000);
-    // }
-
     cure2() {
-        setTimeout(() => {
-            this.infectionLevel -= Math.random() * (8 - 4) + 4; // to get random number between 8 and 4
-            this.infectionLevel = Math.max(0, this.infectionLevel) // for avoiding -ve integer
-        }, 1001);
+        setInterval(() => {
+            let num = Math.floor(Math.random() * (4 - 1) + 1); - 0
+            $("#cure2level2").append("-" + num + "% ")
+            return this.infectionLevel -= num
+        }, 6000);
     }
 
-    // minusFunction() {
-    //     let a = this.infectionLevel -= 1;
-    //     return a
-    // }
+    vaccine() {
+        setInterval(() => {
+            let num = Math.floor(Math.random() * (11 - 1) + 1); - 0
+            $("#cure2level2").append("-" + num + "% ")
+            return this.infectionLevel -= num
+        }, 10000);
+    }
 
-    // quickCure() {
-    //     setInterval(() => {
-    //         this.infectionLevel += Math.floor(Math.random() * (4 - 1) + 1);
-    //     }, 3000);
-
-    // }
-
-    // firstHelpPackShow() {
-    //     setTimeout(() => {
-    //         $("#firstbutton").text("first button goes here")
-
-    //     }, 5000);
-
-    // }
-
-
-
-    // move() {
-    //     var elem = document.getElementById("myBar");
-    //     var width = 0;
-    //     var id = setInterval(frame, 1000);
-    //     function frame() {
-    //         if (width == 100) {
-    //             clearInterval(id);
-    //         } else {
-    //             width++;
-    //             elem.style.width = width + '%';
-    //         }
-    //     }
-    // }
-    // Stage1() {
-    //     setTimeout(() => {
-    //         setInterval(() => {
-    //             this.infectionLevel += Math.floor(Math.random() * (7 - 1) + 1);
-    //         }, 8000);
-    //     }, 60000);
-    // }
-
-    // Stage2() {
-    //     setTimeout(() => {
-    //         setInterval(() => {
-    //             this.infectionLevel++;
-    //         }, 1000);
-    //     }, 120000);
-    // }
-
-    // setTimeout(() {
-    //     this.infectionLevel === 100;
-    // }, 1800000);
-
-
+    vaccineClock() {
+        let clock = 365;
+        setInterval(() => {
+            $("#vaccineClock").html((clock--) + " days until vaccine developed")
+            if (clock === 0) {
+                $("#vaccineClock").hide();
+                $("#vaccineButton").show();
+            }
+        }, 1000);
+    }
 
 
 }

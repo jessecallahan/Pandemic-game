@@ -9,7 +9,7 @@ import { Game } from './pandemic.js';
 
 $(document).ready(function () {
 
-  //clock part
+  // day clock 
   var sec = 0;
   function pad(val) { return val > 9 ? val : "0" + val; }
   setInterval(function () {
@@ -17,44 +17,91 @@ $(document).ready(function () {
     $("#minutes").html(pad(parseInt(sec / 365, 10)) + " years ");
   }, 1000);
 
-  //part that doesnt work
+  //object constructor/game start
   let infectionLevel = 0
   let newGame = new Game(infectionLevel)
   newGame.startInfection();
 
   //first line of defense: cure
-  $("#heal2Button").click(function () {
+  $("#cure1Button").click(function () {
     event.preventDefault();
     newGame.cure();
-    $('#heal2Button').hide();
+    $('#cure1Button').hide();
   });
 
   //first line of defense: doctors
   var counter = 0;
-  $("#heal1Button").click(function () {
+  $("#doctor1Button").click(function () {
     event.preventDefault();
     newGame.doctor1();
-    $("#tendayinfectionlevel2").append((newGame.infectionLevel) + "%")
+    $("#doctor1level").append(newGame.infectionLevel + "% ")
     counter += 1;
     if (counter > 4) {
-      $('#heal1Button').hide();
+      $('#doctor1Button').hide();
+    }
+  });
+
+  //second cure
+
+  $("#cure2button1").click(function () {
+    event.preventDefault();
+    $('#cure2').hide();
+    $('.cure2Show1').show();
+    newGame.vaccineClock();
+  });
+
+  $("#cure2Button2").click(function () {
+    event.preventDefault();
+    newGame.cure2();
+    $('#cure2').hide();
+    $('.cure2Show2').show();
+  });
+
+  $("#vaccineButton").click(function () {
+    event.preventDefault();
+    newGame.vaccine();
+    $('#vaccineButton').hide();
+    $('.cure2Show1').show();
+  });
+
+  // second doctor
+  var counter1 = 0;
+  $("#doctor2Button").click(function () {
+    event.preventDefault();
+    newGame.doctor1();
+    $("#doctor2level").append(newGame.infectionLevel + "% ")
+    counter1 += 1;
+    if (counter1 > 9) {
+      $('#doctor2Button').hide();
     }
   });
 
 
-  //show infection level every one second, end game if infection goes to 100 or more, reset html
+
+
+
+  //infection clock 
   setInterval(function () {
-    $("#infectionlevel").html(" " + newGame.infectionLevel + "% of Earth infected")
+    $("#infectionlevel").html(newGame.infectionLevel + "% of Earth infected")
     if (newGame.infectionLevel >= 100) {
       return alert('Game Over') ? "" : location.reload();
     }
+    if (newGame.infectionLevel < 0) {
+      return alert('You win!') ? "" : location.reload();
+    }
   }, 1000);
 
-  //shows first line of defense
+  //shows lines of defense
   setTimeout(function () {
     $('#heal1').show();
     $('#tenday').show();
   }, 10000);
+
+  setTimeout(function () {
+    $('#heal2').show();
+    $(".cure2Show1").hide();
+    $(".cure2Show2").hide();
+  }, 30000);
 
   //ten day counter
   setInterval(function () {
