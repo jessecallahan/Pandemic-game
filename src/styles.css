@@ -6,6 +6,10 @@ body {
     display: none;
   }
 
+  #news_report, #news_report1, #news_report2, #news_report3, #news_report4, #news_report5, #news_report6  {
+    display: none;
+  }
+
   
   #infectionlevel {
     font-size: 25px;

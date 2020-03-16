@@ -11,17 +11,26 @@
 <body>
   <div class="container">
     <h1>A Pandemic has started!</h1>
-    <!-- notes for jesse (possibilites): 5 lines of defense
-    line 1 - 10 days
-    line 2 - 100 days
-    line 3 - 1 year
-    line 4 - 2 year
-    line 5 - 2 year and 50 days
-    Game ends at 3 years -->
+    <!-- <div class="bg-success">
+       Rules:
+      <p>1st line of defense: coalition, doctors, quarentine</p>
+      <p>2nd line of defense: Vaccine or immediate Response, doctors, quarentine</p>
+      <p>3rd line of defense: Quarentine 2 or Doctors+, doctors, border closing</p>
+    </div>  -->
     <div class="row">
       <div class="col-sm">
         <span id="minutes"></span><span id="seconds"></span>
         <div id="infectionlevel"></div>
+      </div>
+      <div class="col-sm">
+        <div id="news_report"> News report:</div>
+        <div id="news_report1" class="text-danger">- A pandemic has started on Earth!</div>
+        <div id="news_report2" class="text-danger">- The ten day response is now in order.</div>
+        <div id="news_report3" class="text-danger">- 100 days since Pandemic started </div>
+        <div id="news_report4" class="text-danger">- Stock Market crashs. </div>
+        <div id="news_report5" class="text-danger">- 150 day response is being organized </div>
+        <div id="news_report6" class="text-danger">- Get ready </div>
+
       </div>
       <div class="col-sm">
         <div id="tenday"> Here is the ten day report:
@@ -32,7 +41,7 @@
 
     <br>
     <div id="heal1">
-      Here is our first line of defense
+      <div class="bg-light">HERE IS OUT FIRST LINE OF DEFENSE : </div>
       <div id="cure1">
         <button id="cure1Button">Start International Coaliton</button>
         <div>International Coalition Response (-1%/-2% every 5 days):</div>
@@ -40,29 +49,35 @@
       </div>
       <div id="doctor1">
         <button id="doctor1Button">Send Doctors (Goes Away after 5 clicks)</button>
-        <div>Doctors 1 Response (-1% (Max 5 clicks):</div>
+        <div>Doctors 1 Response (-1% (Max 5 clicks)):</div>
         <textarea class="form-control rounded-0" id="doctor1level" rows="2"></textarea>
+      </div>
+      <div id="quarantine1">
+        <button id="quarantine1Button">Quarantine Zone 1 (-10% every 30 days, Takes 30 days to implement)</button>
+        <div>Quarantine Zone 1 Response (-10% every 30 days):</div>
+        <div id="quarantineClock"></div>
+        <textarea class="form-control rounded-0" id="quarantine1level" rows="2"></textarea>
       </div>
     </div>
     <br>
     <div id="heal2">
-      Here is our second line of defense. You have choices here so be careful:
+      <div class="bg-light">HERE IS OUR SECOND LINE OF DEFENSE. YOU HAVE CHOICES, SO BE CAREFUL :</div>
       <div id="cure2">
-        <button id="cure2button1">Start Developing Vaccine </button> or
-        <button id="cure2Button2">Send More Immediate Response</button>
+        <button id="cure2button1">Start Developing Vaccine (Takes 365 days to Develop)</button> or
+        <button id="cure2Button2">Send More Immediate Response (-1%/-3% every 6 days)</button>
       </div>
       <button id="vaccineButton">Deploy Vaccine</button>
-      <div class="cure2Show1">Develops after 1 year (-1/-10% every 10 days):
+      <div class="cure2Show1">Develops after 1 year (-1/-10% every 7 days):
         <div id="vaccineClock"></div>
       </div>
-      <div class="cure2Show2">Immediate Response (-1%/-3% every 3 days)</div>
+      <div class="cure2Show2">Immediate Response (-1%/-3% every 6 days)</div>
 
 
       <textarea class="form-control rounded-0" id="cure2level2" rows="2"></textarea>
 
       <div id="doctor2">
-        <button id="doctor2Button">Send Doctors (Goes Away after clicks)</button>
-        <div>Doctors 1 Response (-1% (Max 10 clicks):</div>
+        <button id="doctor2Button">Send Doctors (Goes Away 10 after clicks)</button>
+        <div>Doctors 1 Response (-1% (Max 10 clicks)):</div>
         <textarea class="form-control rounded-0" id="doctor2level" rows="2"></textarea>
       </div>
     </div>
