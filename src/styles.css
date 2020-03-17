@@ -2,11 +2,11 @@ body {
     background-color: yellow;
   }
 
-  #heal1, #heal2, #heal3, #tenday, #vaccineButton {
+  #heal1, #heal2, #heal3, #tenday, #vaccineButton, #quarantine2, #supDoc, .doctor2plusShow, #animalAnswer {
     display: none;
   }
 
-  #news_report, #news_report1, #news_report2, #news_report3, #news_report4, #news_report5, #news_report6  {
+  #news_report {
     display: none;
   }
 

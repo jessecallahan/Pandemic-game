@@ -24,12 +24,9 @@
       </div>
       <div class="col-sm">
         <div id="news_report"> News report:</div>
-        <div id="news_report1" class="text-danger">- A pandemic has started on Earth!</div>
-        <div id="news_report2" class="text-danger">- The ten day response is now in order.</div>
-        <div id="news_report3" class="text-danger">- 100 days since Pandemic started </div>
-        <div id="news_report4" class="text-danger">- Stock Market crashs. </div>
-        <div id="news_report5" class="text-danger">- 150 day response is being organized </div>
-        <div id="news_report6" class="text-danger">- Get ready </div>
+        <div id="news_report1" class="text-danger"></div>
+        <div id="news_report2" class="text-danger"></div>
+        <div id="news_reportVac" class="text-danger"></div>
 
       </div>
       <div class="col-sm">
@@ -41,7 +38,7 @@
 
     <br>
     <div id="heal1">
-      <div class="bg-light">HERE IS OUT FIRST LINE OF DEFENSE : </div>
+      <div class="p-3 mb-2 bg-primary text-white">HERE IS OUR FIRST LINE OF DEFENSE : </div>
       <div id="cure1">
         <button id="cure1Button">Start International Coaliton</button>
         <div>International Coalition Response (-1%/-2% every 5 days):</div>
@@ -61,26 +58,83 @@
     </div>
     <br>
     <div id="heal2">
-      <div class="bg-light">HERE IS OUR SECOND LINE OF DEFENSE. YOU HAVE CHOICES, SO BE CAREFUL :</div>
+      <div class="p-3 mb-2 bg-primary text-white">HERE IS OUR SECOND LINE OF DEFENSE. YOU HAVE CHOICES, SO BE CAREFUL :
+      </div>
+
       <div id="cure2">
         <button id="cure2button1">Start Developing Vaccine (Takes 365 days to Develop)</button> or
         <button id="cure2Button2">Send More Immediate Response (-1%/-3% every 6 days)</button>
       </div>
+
       <button id="vaccineButton">Deploy Vaccine</button>
-      <div class="cure2Show1">Develops after 1 year (-1/-10% every 7 days):
+      <div class="cure2Show1">Impelements after 1 year (-1/-10% every 7 days):
         <div id="vaccineClock"></div>
       </div>
       <div class="cure2Show2">Immediate Response (-1%/-3% every 6 days)</div>
-
-
       <textarea class="form-control rounded-0" id="cure2level2" rows="2"></textarea>
 
       <div id="doctor2">
+        <button id="doctor2Button">Send Doctors (Goes Away after 10 clicks)</button>
+        <div>Doctors 2 Response (-1% (Max 10 clicks)):</div>
+        <textarea class="form-control rounded-0" id="doctor2level" rows="2"></textarea>
+      </div>
+    </div>
+    <div class="doctor2plusShow">
+      <div id="animalQuestion">*Bonus* Experts believe the disease is linked to an animal but can't decide which one.
+        What do
+        you think?
+        <form id="animalForm"></form>
+        <label class="radio-inline">
+          <input type="radio" name="optradio" value="Dogs">Dogs
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="optradio" value="Cats">Cats
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="optradio" value="Birds">Birds
+        </label>
+        <button id="bonusButton">Pick Animal and Click Here</button>
+        </form>
+      </div>
+      <div id="animalAnswer">
+        <div>*Bonus* Answer :</div>
+      </div>
+      <textarea class="form-control rounded-0" id="animalLevel" rows="2"></textarea>
+    </div>
+    <br>
+
+
+
+
+    <div id="heal3">
+      <div class="p-3 mb-2 bg-primary text-white">HERE IS OUR THIRD LINE OF DEFENSE. YOU HAVE CHOICES, SO BE CAREFUL :
+      </div>
+      <div id="cure3">
+        <button id="quarantine2Button">Quarantine Zone 2 (-8% every 30 days, Takes 30 days to implement)</button> or
+        <button id="supDocButton">Create Doctors++ (-2, MAX 15 clicks)</button>
+      </div>
+      <div id="quarantine2">
+        <div>Quarantine Zone 2 Response (-8% every 30 days):</div>
+        <div id="quarantine2Clock"></div>
+      </div>
+      <div id="supDoc">
+        <button id="ss1">Send Doctors++ (Goes away after 15 clicks)</button>
+        <div>Doctors++ Response (-2% (Max 15 clicks)):</div>
+      </div>
+
+
+      <textarea class="form-control rounded-0" id="cure3level" rows="2"></textarea>
+    </div>
+
+
+
+
+    <!-- <div id="doctor2">
         <button id="doctor2Button">Send Doctors (Goes Away 10 after clicks)</button>
         <div>Doctors 1 Response (-1% (Max 10 clicks)):</div>
         <textarea class="form-control rounded-0" id="doctor2level" rows="2"></textarea>
       </div>
-    </div>
+    </div>  -->
 
 
 

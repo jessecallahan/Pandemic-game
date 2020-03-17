@@ -15,6 +15,10 @@ export class Game {
         this.infectionLevel--;
     }
 
+    doctor2() {
+        this.infectionLevel--;
+    }
+
     cure() {
         setInterval(() => {
             let num = Math.floor(Math.random() * (3 - 1) + 1); - 0
@@ -46,6 +50,13 @@ export class Game {
         }, 30000);
     }
 
+    quarantine2() {
+        setInterval(() => {
+            this.infectionLevel -= 8
+            $("#cure3level").append("-" + 8 + "% ")
+        }, 30000);
+    }
+
     vaccineClock() {
         let clock = 365;
         setInterval(() => {
@@ -60,12 +71,29 @@ export class Game {
     quarantineClock() {
         let clock = 30;
         setInterval(() => {
-            $("#quarantineClock").html((clock--) + " days until quarantine developed")
+            $("#quarantineClock").html((clock--) + " days until quarantine implemented")
             if (clock === 0) {
                 $("#quarantineClock").hide();
                 this.quarantine1();
             }
         }, 1000);
     }
+
+    quarantineClock2() {
+        let clock = 30;
+        setInterval(() => {
+            $("#quarantine2Clock").html((clock--) + " days until quarantine implemented")
+            if (clock === 0) {
+                $("#quarantine2Clock").hide();
+                this.quarantine2();
+            }
+        }, 1000);
+    }
+
+    // animalQuiz() {
+    //     if ( === "1") {
+    //         return $('#animalLevel').append("woah")
+    //     }
+    // }
 
 }
