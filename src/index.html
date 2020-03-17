@@ -52,7 +52,7 @@
       <div id="quarantine1">
         <button id="quarantine1Button">Quarantine Zone 1 (-10% every 30 days, Takes 30 days to implement)</button>
         <div>Quarantine Zone 1 Response (-10% every 30 days):</div>
-        <div id="quarantineClock"></div>
+        <div class="text-success" id="quarantineClock"></div>
         <textarea class="form-control rounded-0" id="quarantine1level" rows="2"></textarea>
       </div>
     </div>
@@ -68,7 +68,7 @@
 
       <button id="vaccineButton">Deploy Vaccine</button>
       <div class="cure2Show1">Impelements after 1 year (-1/-10% every 7 days):
-        <div id="vaccineClock"></div>
+        <div class="text-success" id="vaccineClock"></div>
       </div>
       <div class="cure2Show2">Immediate Response (-1%/-3% every 6 days)</div>
       <textarea class="form-control rounded-0" id="cure2level2" rows="2"></textarea>
@@ -83,17 +83,17 @@
       <div id="animalQuestion">*Bonus* Experts believe the disease is linked to an animal but can't decide which one.
         What do
         you think?
-        <form id="animalForm"></form>
-        <label class="radio-inline">
-          <input type="radio" name="optradio" value="Dogs">Dogs
-        </label>
-        <label class="radio-inline">
-          <input type="radio" name="optradio" value="Cats">Cats
-        </label>
-        <label class="radio-inline">
-          <input type="radio" name="optradio" value="Birds">Birds
-        </label>
-        <button id="bonusButton">Pick Animal and Click Here</button>
+        <form>
+          <label class="radio-inline">
+            <input type="radio" name="optradio" value="Dogs">Dogs
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="optradio" value="Snakes">Snakes
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="optradio" value="Birds">Birds
+          </label>
+          <button id="bonusButton">Pick Animal and Click Here</button>
         </form>
       </div>
       <div id="animalAnswer">
@@ -115,39 +115,20 @@
       </div>
       <div id="quarantine2">
         <div>Quarantine Zone 2 Response (-8% every 30 days):</div>
-        <div id="quarantine2Clock"></div>
+        <div class="text-success" id="quarantine2Clock"></div>
       </div>
       <div id="supDoc">
-        <button id="ss1">Send Doctors++ (Goes away after 15 clicks)</button>
+        <button id="supDocButton1">Send Doctors++ (Goes away after 15 clicks)</button>
         <div>Doctors++ Response (-2% (Max 15 clicks)):</div>
       </div>
-
-
       <textarea class="form-control rounded-0" id="cure3level" rows="2"></textarea>
     </div>
 
-
-
-
-    <!-- <div id="doctor2">
-        <button id="doctor2Button">Send Doctors (Goes Away 10 after clicks)</button>
-        <div>Doctors 1 Response (-1% (Max 10 clicks)):</div>
-        <textarea class="form-control rounded-0" id="doctor2level" rows="2"></textarea>
-      </div>
-    </div>  -->
-
-
-
-
-
-
-
-
-
-
-
   </div>
-  </div>
+  <footer>
+    <p></p>
+    <p></p>
+  </footer>
 </body>
 
 </html>

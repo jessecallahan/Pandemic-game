@@ -21,6 +21,7 @@ $(document).ready(function () {
   let infectionLevel = 0
   let newGame = new Game(infectionLevel)
   newGame.startInfection();
+  newGame.gameOver();
 
   //first line of defense: cure
   $("#cure1Button").click(function () {
@@ -89,11 +90,9 @@ $(document).ready(function () {
   });
   //second doctor plus feature
   $("#bonusButton").click(function () {
-    $("form#animalForm").submit(function (event) {
-      event.preventDefault();
-      let a = $("input:radio[name=optradio]:checked").val();
-      $("#animalLevel").text(a);
-    });
+    event.preventDefault();
+
+    newGame.animalQuiz();
     $('#animalQuestion').hide();
     $('#animalAnswer').show();
   });
@@ -117,14 +116,14 @@ $(document).ready(function () {
   });
 
   var counter2 = 0;
-  $("#ss1").click(function () {
+  $("#supDocButton1").click(function () {
     event.preventDefault();
     newGame.doctor1();
     newGame.doctor2();
     $("#cure3level").append(newGame.infectionLevel + "% ")
     counter2 += 1;
     if (counter2 > 14) {
-      $('#ss1').hide();
+      $('#supDocButton1').hide();
     }
   });
 
@@ -151,14 +150,7 @@ $(document).ready(function () {
   //infection clock 
   setInterval(function () {
     $("#news_report").show();
-    $("#infectionlevel").html(newGame.infectionLevel + "% of Earth infected")
-    //Game Over
-    if (newGame.infectionLevel >= 100) {
-      return alert('Game Over') ? "" : location.reload();
-    }
-    if (newGame.infectionLevel < 0) {
-      return alert('You win!') ? "" : location.reload();
-    }
+    $("#infectionlevel").text(newGame.infectionLevel + "% of Earth infected")
   }, 1000);
 
   //shows lines of defense
@@ -184,11 +176,19 @@ $(document).ready(function () {
   }, 5000);
 
   setTimeout(function () {
-    $("#news_report2").text("- The ten day response is now in order");
+    $("#news_report2").text("- The ten day response is in order");
   }, 15000);
 
   setTimeout(function () {
-    $("#news_report1").text("- 100 days since Pandemic started");
+    $("#news_report1").text("- Earth moves swiftly to respond");
+  }, 50000);
+
+  setTimeout(function () {
+    $("#news_report1").text("- Awaiting news for more response");
+  }, 70000);
+
+  setTimeout(function () {
+    $("#news_report1").text("- 100 days since Pandemic start");
   }, 100000);
 
   setTimeout(function () {
@@ -200,8 +200,13 @@ $(document).ready(function () {
   }, 125000);
 
   setTimeout(function () {
-    $("#news_report6").text("- Stand by");
+    $("#news_report2").text("- Stand by");
   }, 140000);
+
+  setTimeout(function () {
+    $("#news_report1").text("- 150 day response is available for deployment");
+    $("#news_report2").hide();
+  }, 150000);
 
 
   //ten day counter
