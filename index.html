@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+
+  <title>Pandemic</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>A Pandemic has started!</h1>
+    <!-- <div class="bg-success">
+       Rules:
+      <p>1st line of defense: coalition, doctors, quarentine</p>
+      <p>2nd line of defense: Vaccine or immediate Response, doctors, quarentine</p>
+      <p>3rd line of defense: Quarentine 2 or Doctors+, doctors, border closing</p>
+    </div>  -->
+    <div class="row">
+      <div class="col-sm">
+        <span id="minutes"></span><span id="seconds"></span>
+        <div id="infectionlevel"></div>
+      </div>
+      <div class="col-sm">
+        <div id="news_report"> News report:</div>
+        <div id="news_report1" class="text-danger"></div>
+        <div id="news_report2" class="text-danger"></div>
+        <div id="news_reportVac" class="text-danger"></div>
+
+      </div>
+      <div class="col-sm">
+        <div id="tenday"> Here is the ten day report:
+          <textarea class="form-control rounded-0" id="tendayinfectionlevel" rows="2"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <div id="heal1">
+      <div class="p-3 mb-2 bg-primary text-white">HERE IS OUR FIRST LINE OF DEFENSE : </div>
+      <div id="cure1">
+        <button id="cure1Button">Start International Coaliton</button>
+        <div>International Coalition Response (-1%/-2% every 5 days):</div>
+        <textarea class="form-control rounded-0" id="cure1level" rows="2"></textarea>
+      </div>
+      <div id="doctor1">
+        <button id="doctor1Button">Send Doctors (Goes Away after 5 clicks)</button>
+        <div>Doctors 1 Response (-1% (Max 5 clicks)):</div>
+        <textarea class="form-control rounded-0" id="doctor1level" rows="2"></textarea>
+      </div>
+      <div id="quarantine1">
+        <button id="quarantine1Button">Quarantine Zone 1 (-10% every 30 days, Takes 30 days to implement)</button>
+        <div>Quarantine Zone 1 Response (-10% every 30 days):</div>
+        <div class="text-success" id="quarantineClock"></div>
+        <textarea class="form-control rounded-0" id="quarantine1level" rows="2"></textarea>
+      </div>
+    </div>
+    <br>
+    <div id="heal2">
+      <div class="p-3 mb-2 bg-primary text-white">HERE IS OUR SECOND LINE OF DEFENSE. YOU HAVE CHOICES, SO BE CAREFUL :
+      </div>
+
+      <div id="cure2">
+        <button id="cure2button1">Start Developing Vaccine (Takes 365 days to Develop)</button> or
+        <button id="cure2Button2">Send More Immediate Response (-1%/-3% every 6 days)</button>
+      </div>
+
+      <button id="vaccineButton">Deploy Vaccine</button>
+      <div class="cure2Show1">Impelements after 1 year (-1/-10% every 7 days):
+        <div class="text-success" id="vaccineClock"></div>
+      </div>
+      <div class="cure2Show2">Immediate Response (-1%/-3% every 6 days)</div>
+      <textarea class="form-control rounded-0" id="cure2level2" rows="2"></textarea>
+
+      <div id="doctor2">
+        <button id="doctor2Button">Send Doctors (Goes Away after 10 clicks)</button>
+        <div>Doctors 2 Response (-1% (Max 10 clicks)):</div>
+        <textarea class="form-control rounded-0" id="doctor2level" rows="2"></textarea>
+      </div>
+    </div>
+    <div class="doctor2plusShow">
+      <div id="animalQuestion">*Bonus* Experts believe the disease is linked to an animal but can't decide which one.
+        What do
+        you think?
+        <form>
+          <label class="radio-inline">
+            <input type="radio" name="optradio" value="Dogs">Dogs
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="optradio" value="Snakes">Snakes
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="optradio" value="Birds">Birds
+          </label>
+          <button id="bonusButton">Pick Animal and Click Here</button>
+        </form>
+      </div>
+      <div id="animalAnswer">
+        <div>*Bonus* Answer :</div>
+      </div>
+      <textarea class="form-control rounded-0" id="animalLevel" rows="2"></textarea>
+    </div>
+    <br>
+
+
+
+
+    <div id="heal3">
+      <div class="p-3 mb-2 bg-primary text-white">HERE IS OUR THIRD LINE OF DEFENSE. YOU HAVE CHOICES, SO BE CAREFUL :
+      </div>
+      <div id="cure3">
+        <button id="quarantine2Button">Quarantine Zone 2 (-8% every 30 days, Takes 30 days to implement)</button> or
+        <button id="supDocButton">Create Doctors++ (-2, MAX 15 clicks)</button>
+      </div>
+      <div id="quarantine2">
+        <div>Quarantine Zone 2 Response (-8% every 30 days):</div>
+        <div class="text-success" id="quarantine2Clock"></div>
+      </div>
+      <div id="supDoc">
+        <button id="supDocButton1">Send Doctors++ (Goes away after 15 clicks)</button>
+        <div>Doctors++ Response (-2% (Max 15 clicks)):</div>
+      </div>
+      <textarea class="form-control rounded-0" id="cure3level" rows="2"></textarea>
+    </div>
+
+  </div>
+  <footer>
+    <p></p>
+    <p></p>
+  </footer>
+<script type="text/javascript" src="bundle.js"></script></body>
+
+</html>
