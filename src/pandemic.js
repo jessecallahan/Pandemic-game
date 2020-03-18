@@ -18,7 +18,7 @@ export class Game {
             else if (this.infectionLevel < 0) {
                 alert('You win!') ? "" : location.reload();
             }
-        }, 10);
+        }, 1000);
     }
 
 
